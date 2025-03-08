@@ -159,6 +159,7 @@ gOakSpeech_Text_AskPlayerGender::
     .string "Or are you a girl?$"
 
 gPikachuIntro_Text_Page1::
+    .string "Pokemon Primal Red:\n"
     .string "In the world which you are about to\n"
     .string "enter, you will embark on a grand\n"
     .string "adventure with you as the hero.\n"
