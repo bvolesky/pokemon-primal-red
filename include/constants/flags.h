@@ -190,7 +190,7 @@
 #define FLAG_HIDE_SAFFRON_CITY_POKECENTER_SABRINA_JOURNALS 0x0AE
 
 // Unused?
-#define FLAG_0x0AF               0x0AF
+#define FLAG_HIDE_MEW               0x0AF
 #define FLAG_0x0B0               0x0B0
 #define FLAG_0x0B1               0x0B1
 #define FLAG_0x0B2               0x0B2
@@ -794,7 +794,7 @@
 #define FLAG_OAKS_RATING_IS_VIA_PC                       0x2FF
 
 // Unused?
-#define FLAG_0x300               0x300
+#define FLAG_FOUGHT_MEW               0x300
 #define FLAG_0x301               0x301
 #define FLAG_0x302               0x302
 #define FLAG_0x303               0x303
