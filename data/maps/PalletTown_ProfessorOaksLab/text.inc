@@ -355,3 +355,5 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
     .string "ONE ISLAND first…\p"
     .string "Anyways, I'm outta here!$"
 
+PalletTown_ProfessorOaksLab_Text_ReceivedEXPALL::
+    .string "{PLAYER} received the EXP ALL!$"

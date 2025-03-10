@@ -564,6 +564,9 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	call EventScript_RestorePrevTextColor
 	removeitem ITEM_OAKS_PARCEL
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCustomBallIOrdered
+	msgbox PalletTown_ProfessorOaksLab_Text_ReceivedEXPALL
+    setflag FLAG_GOT_EXP_ALL
+    giveitem ITEM_EXP_ALL, 1
 	playbgm MUS_ENCOUNTER_RIVAL, 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalGramps
 	closemessage
