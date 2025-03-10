@@ -3161,20 +3161,32 @@ static void Cmd_getexp(void)
 
                 if (holdEffect == HOLD_EFFECT_EXP_SHARE)
                     viaExpShare++;
+
+                if (holdEffect == HOLD_EFFECT_EXP_ALL)
+                    viaExpShare = PARTY_SIZE;
             }
 
             calculatedExp = gSpeciesInfo[gBattleMons[gBattlerFainted].species].expYield * gBattleMons[gBattlerFainted].level / 7;
 
-            if (viaExpShare) // at least one mon is getting exp via exp share
+            if (viaExpShare)
             {
                 *exp = SAFE_DIV(calculatedExp / 2, viaSentIn);
                 if (*exp == 0)
                     *exp = 1;
 
-                gExpShareExp = calculatedExp / 2 / viaExpShare;
+                if (viaExpShare == PARTY_SIZE)
+                {
+                    gExpShareExp = calculatedExp / PARTY_SIZE;
+                }
+                else
+                {
+                    gExpShareExp = calculatedExp / 2 / viaExpShare;
+                }
+
                 if (gExpShareExp == 0)
                     gExpShareExp = 1;
             }
+
             else
             {
                 *exp = SAFE_DIV(calculatedExp, viaSentIn);
@@ -3227,7 +3239,7 @@ static void Cmd_getexp(void)
                     else
                         gBattleMoveDamage = 0;
 
-                    if (holdEffect == HOLD_EFFECT_EXP_SHARE)
+                    if (holdEffect == HOLD_EFFECT_EXP_SHARE || holdEffect == HOLD_EFFECT_EXP_ALL)
                         gBattleMoveDamage += gExpShareExp;
                     if (holdEffect == HOLD_EFFECT_LUCKY_EGG)
                         gBattleMoveDamage = (gBattleMoveDamage * 150) / 100;
