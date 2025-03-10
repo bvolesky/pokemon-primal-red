@@ -6057,22 +6057,6 @@
       "battleUsage": 0,
       "battleUseFunc": "NULL",
       "secondaryId": 0
-    },
-    {
-     "english": "EXP ALL",
-     "itemId": "ITEM_EXP_ALL",
-     "price": 0,
-     "holdEffect": "HOLD_EFFECT_EXP_ALL",
-     "holdEffectParam": 0,
-     "description_english": "Shares EXP among all party Pokémon.",
-     "importance": 1,
-     "registrability": 1,
-     "pocket": "POCKET_KEY_ITEMS",
-     "type": "ITEM_TYPE_BAG_MENU",
-     "fieldUseFunc": "NULL",
-     "battleUsage": 0,
-     "battleUseFunc": "NULL",
-     "secondaryId": 0
-  }
+    }
   ]
 }

@@ -795,7 +795,7 @@
 
 // Unused?
 #define FLAG_FOUGHT_MEW               0x300
-#define FLAG_GOT_EXP_ALL              0x301
+#define FLAG_0x301               0x301
 #define FLAG_0x302               0x302
 #define FLAG_0x303               0x303
 #define FLAG_0x304               0x304
