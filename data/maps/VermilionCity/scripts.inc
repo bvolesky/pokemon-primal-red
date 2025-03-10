@@ -25,8 +25,6 @@ VermilionCity_Movement_ExitSSAnne::
 VermilionCity_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_VERMILION_CITY
 	call_if_set FLAG_TALKED_TO_OAKS_AIDE_IN_VERMILION, VermilionCity_EventScript_HideOaksAide
-	setflag FLAG_HIDE_SEAGALLOP_FERRY  @ Hides the Seagallop ferry permanently
-	setflag FLAG_HIDE_FERRY_SAILOR  @ Hides the sailor NPC
 	end
 
 

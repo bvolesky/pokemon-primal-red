@@ -92,7 +92,6 @@ CinnabarIsland_EventScript_BillScene:
     lockall
     textcolor NPC_TEXT_COLOR_MALE
     msgbox CinnabarIsland_Text_HeyIfItIsntPlayer
-    msgbox CinnabarIsland_Text_SorryCantTalkRightNow
     releaseall
     end
 
