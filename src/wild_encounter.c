@@ -13,13 +13,19 @@
 #include "script.h"
 #include "link.h"
 #include "quest_log.h"
+#include "pokedex.h"
+#include "save.h"
 #include "constants/maps.h"
 #include "constants/abilities.h"
 #include "constants/items.h"
+#include "constants/species.h"
 
 #define MAX_ENCOUNTER_RATE 1600
 
 #define HEADER_NONE 0xFFFF
+
+#define GET_POKEDEX_FLAG(array, index)  (((index) < 151) ? ((array)[(index) >> 3] & (1 << ((index) & 7))) : 0)
+
 
 struct WildEncounterData
 {
@@ -62,6 +68,13 @@ static const u8 sUnownLetterSlots[][LAND_WILD_COUNT] = {
   //  Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   !
     {25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26},
 };
+
+bool8 HasPlayerCaught(u16 species)
+{
+    // species is assumed to be 1-indexed.
+    return GET_POKEDEX_FLAG(gSaveBlock2Ptr->pokedex.owned, species - 1) != 0;
+}
+
 
 void DisableWildEncounters(bool8 state)
 {
@@ -266,10 +279,13 @@ enum
 #define WILD_CHECK_REPEL    0x1
 #define WILD_CHECK_KEEN_EYE 0x2
 
+
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8 flags)
 {
     u8 slot = 0;
     u8 level;
+    u16 species;
+
     switch (area)
     {
     case WILD_AREA_LAND:
@@ -283,13 +299,31 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8
         break;
     }
     level = ChooseWildMonLevel(&info->wildPokemon[slot]);
+    species = info->wildPokemon[slot].species;
+    if (species >= 151)
+    {
+        return FALSE;
+    }
+
+
+    // NEW: If the species is already caught, lower its chance to appear.
+    if (HasPlayerCaught(species))
+    {
+        // For example, with a 70% chance, cancel the encounter.
+        if ((Random() % 100) < 70)
+        {
+            return FALSE;
+        }
+    }
+
     if (flags == WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
     {
         return FALSE;
     }
-    GenerateWildMon(info->wildPokemon[slot].species, level, slot);
+    GenerateWildMon(species, level, slot);
     return TRUE;
 }
+
 
 static u16 GenerateFishingEncounter(const struct WildPokemonInfo * info, u8 rod)
 {
