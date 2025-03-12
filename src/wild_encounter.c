@@ -280,12 +280,13 @@ enum
 #define WILD_CHECK_KEEN_EYE 0x2
 
 
-static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8 flags)
+static bool8 TryGenerateWildMon(const struct WildPokemonInfo *info, u8 area, u8 flags)
 {
     u8 slot = 0;
     u8 level;
     u16 species;
 
+    // Choose a wild Pokémon slot based on the area
     switch (area)
     {
     case WILD_AREA_LAND:
@@ -297,32 +298,43 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * info, u8 area, u8
     case WILD_AREA_ROCKS:
         slot = ChooseWildMonIndex_WaterRock();
         break;
+    default:
+        return FALSE; // Invalid area, fail encounter generation
     }
+
+    // Validate slot index before accessing wild Pokémon array
+    if (slot >= LAND_WILD_COUNT)
+    {
+        return FALSE;
+    }
+
+    // Retrieve level and species
     level = ChooseWildMonLevel(&info->wildPokemon[slot]);
     species = info->wildPokemon[slot].species;
-    if (species >= 151)
+
+    // Validate species to ensure it's within the first 151 Pokémon and not NONE
+    if (species == SPECIES_NONE || species > SPECIES_MEW)
     {
         return FALSE;
     }
 
-
-    // NEW: If the species is already caught, lower its chance to appear.
-    if (HasPlayerCaught(species))
-    {
-        // For example, with a 70% chance, cancel the encounter.
-        if ((Random() % 100) < 70)
-        {
-            return FALSE;
-        }
-    }
-
-    if (flags == WILD_CHECK_REPEL && !IsWildLevelAllowedByRepel(level))
+    // Reduce encounter chance if Pokémon is already caught
+    if (HasPlayerCaught(species) && (Random() % 100) < 70)
     {
         return FALSE;
     }
+
+    // Repel logic: Check if the encounter should be prevented
+    if ((flags & WILD_CHECK_REPEL) && !IsWildLevelAllowedByRepel(level))
+    {
+        return FALSE;
+    }
+
+    // Generate the wild Pokémon
     GenerateWildMon(species, level, slot);
     return TRUE;
 }
+
 
 
 static u16 GenerateFishingEncounter(const struct WildPokemonInfo * info, u8 rod)
