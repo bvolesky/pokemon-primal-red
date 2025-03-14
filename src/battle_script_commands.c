@@ -3158,7 +3158,7 @@ static void Cmd_getexp(void)
             if (gBattleStruct->sentInPokes & 1)
                 gBattleMoveDamage = *exp;       // Active: full EXP.
             else
-                gBattleMoveDamage = *exp / 2;     // Inactive: half EXP.
+                gBattleMoveDamage = *exp / 3;     // Inactive: 1/3 EXP.
 
             // If this Pokémon is already at MAX_LEVEL, award no EXP.
             if (GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL) == MAX_LEVEL)

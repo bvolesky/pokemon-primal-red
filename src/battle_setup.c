@@ -255,18 +255,6 @@ static void DoStandardWildBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
 }
 
-void StartRoamerBattle(void)
-{
-    LockPlayerFieldControls();
-    FreezeObjectEvents();
-    StopPlayerAvatar();
-    gMain.savedCallback = CB2_EndWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_ROAMER;
-    CreateBattleStartTask(GetWildBattleTransition(), MUS_VS_LEGEND);
-    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
-    IncrementGameStat(GAME_STAT_WILD_BATTLES);
-}
-
 static void DoSafariBattle(void)
 {
     LockPlayerFieldControls();
@@ -358,16 +346,9 @@ void StartLegendaryBattle(void)
     case SPECIES_MEWTWO:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_MEWTWO);
         break;
-    case SPECIES_DEOXYS:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_DEOXYS);
-        break;
     case SPECIES_MOLTRES:
     case SPECIES_ARTICUNO:
     case SPECIES_ZAPDOS:
-    case SPECIES_HO_OH:
-    case SPECIES_LUGIA:
-        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_VS_LEGEND);
-        break;
     default:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RS_VS_TRAINER);
         break;

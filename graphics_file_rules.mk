@@ -36,31 +36,6 @@ JPCONTESTGFXDIR := graphics/contest/japanese
 types := normal fight flying poison ground rock bug ghost steel mystery fire water grass electric psychic ice dragon dark
 contest_types := cool beauty cute smart tough
 
-CASTFORMGFXDIR := graphics/pokemon/castform
-$(CASTFORMGFXDIR)/front.4bpp: $(CASTFORMGFXDIR)/normal/front.4bpp \
-											$(CASTFORMGFXDIR)/sunny/front.4bpp \
-											$(CASTFORMGFXDIR)/rainy/front.4bpp \
-											$(CASTFORMGFXDIR)/snowy/front.4bpp
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/back.4bpp: $(CASTFORMGFXDIR)/normal/back.4bpp \
-									 $(CASTFORMGFXDIR)/sunny/back.4bpp \
-									 $(CASTFORMGFXDIR)/rainy/back.4bpp \
-									 $(CASTFORMGFXDIR)/snowy/back.4bpp
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/normal.gbapal: $(CASTFORMGFXDIR)/normal/normal.gbapal \
-									 $(CASTFORMGFXDIR)/sunny/normal.gbapal \
-									 $(CASTFORMGFXDIR)/rainy/normal.gbapal \
-									 $(CASTFORMGFXDIR)/snowy/normal.gbapal
-	@cat $^ >$@
-
-$(CASTFORMGFXDIR)/shiny.gbapal: $(CASTFORMGFXDIR)/normal/shiny.gbapal \
-									$(CASTFORMGFXDIR)/sunny/shiny.gbapal \
-									$(CASTFORMGFXDIR)/rainy/shiny.gbapal \
-									$(CASTFORMGFXDIR)/snowy/shiny.gbapal
-	@cat $^ >$@
-
 $(FONTGFXDIR)/latin_small.latfont: $(FONTGFXDIR)/latin_small.png
 	$(GFX) $< $@
 
@@ -97,8 +72,8 @@ $(FONTGFXDIR)/japanese_bold.fwjpnfont: $(FONTGFXDIR)/japanese_bold.png
 graphics/title_screen/pokemon_logo.gbapal: %.gbapal: %.pal
 	$(GFX) $< $@ -num_colors 224
 
-graphics/pokemon_jump/bg.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -num_tiles 63 -Wnum_tiles
+# graphics/pokemon_jump/bg.4bpp: %.4bpp: %.png
+# 	$(GFX) $< $@ -num_tiles 63 -Wnum_tiles
 
 $(MISCGFXDIR)/japanese_hof.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 29 -Wnum_tiles
@@ -496,9 +471,6 @@ POKEDEXAREAMARKERFILES := \
 
 $(POKEDEXAREAMARKERSDATADIR)/marker.4bpp: $(POKEDEXAREAMARKERFILES)
 	cat $^ > $@
-
-graphics/pokemon/heracross/unk_icon.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 graphics/misc/emoticons.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2

@@ -36,7 +36,6 @@
 #include "quest_log_objects.h"
 #include "random.h"
 #include "renewable_hidden_items.h"
-#include "roamer.h"
 #include "safari_zone.h"
 #include "save_location.h"
 #include "scanline_effect.h"
@@ -342,8 +341,6 @@ static void Overworld_ResetStateOnContinue(void)
     FlagClear(FLAG_SYS_SAFARI_MODE);
     VarSet(VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 0);
     ChooseAmbientCrySpecies();
-    UpdateLocationHistoryForRoamer();
-    RoamerMoveToOtherLocationSet();
 }
 
 // Routines related to game stats
@@ -770,8 +767,6 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     for (paletteIndex = 7; paletteIndex < 13; paletteIndex++)
         ApplyWeatherGammaShiftToPal(paletteIndex);
     InitSecondaryTilesetAnimation();
-    UpdateLocationHistoryForRoamer();
-    RoamerMove();
     QL_ResetDefeatedWildMonRecord();
     DoCurrentWeather();
     ResetFieldTasksArgs();
@@ -801,8 +796,6 @@ static void LoadMapFromWarp(bool32 unused)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     TryRegenerateRenewableHiddenItems();
-    UpdateLocationHistoryForRoamer();
-    RoamerMoveToOtherLocationSet();
     QL_ResetDefeatedWildMonRecord();
     InitMap();
 }

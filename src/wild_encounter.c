@@ -4,7 +4,6 @@
 #include "event_data.h"
 #include "fieldmap.h"
 #include "random.h"
-#include "roamer.h"
 #include "field_player_avatar.h"
 #include "battle_setup.h"
 #include "overworld.h"
@@ -241,16 +240,7 @@ static void GenerateWildMon(u16 species, u8 level, u8 slot)
     u32 personality;
     s8 chamber;
     ZeroEnemyPartyMons();
-    if (species != SPECIES_UNOWN)
-    {
-        CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
-    }
-    else
-    {
-        chamber = gSaveBlock1Ptr->location.mapNum - MAP_NUM(SEVEN_ISLAND_TANOBY_RUINS_MONEAN_CHAMBER);
-        personality = GenerateUnownPersonalityByLetter(sUnownLetterSlots[chamber][slot]);
-        CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
-    }
+    CreateMonWithNature(&gEnemyParty[0], species, level, USE_RANDOM_IVS, Random() % NUM_NATURES);
 }
 
 static u32 GenerateUnownPersonalityByLetter(u8 letter)
@@ -401,7 +391,6 @@ static bool8 DoGlobalWildEncounterDiceRoll(void)
 bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetatileBehavior)
 {
     u16 headerId;
-    struct Roamer * roamer;
 
     if (sWildEncountersDisabled == TRUE)
         return FALSE;
@@ -419,18 +408,6 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetatileBehavior)
             {
                 AddToWildEncounterRateBuff(gWildMonHeaders[headerId].landMonsInfo->encounterRate);
                 return FALSE;
-            }
-
-            else if (TryStartRoamerEncounter() == TRUE)
-            {
-                roamer = &gSaveBlock1Ptr->roamer;
-                if (!IsWildLevelAllowedByRepel(roamer->level))
-                {
-                    return FALSE;
-                }
-
-                StartRoamerBattle();
-                return TRUE;
             }
             else
             {
@@ -460,28 +437,14 @@ bool8 StandardWildEncounter(u32 currMetatileAttrs, u16 previousMetatileBehavior)
                 return FALSE;
             }
 
-            if (TryStartRoamerEncounter() == TRUE)
+            if (TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL) == TRUE)
             {
-                roamer = &gSaveBlock1Ptr->roamer;
-                if (!IsWildLevelAllowedByRepel(roamer->level))
-                {
-                    return FALSE;
-                }
-
-                StartRoamerBattle();
+                StartWildBattle();
                 return TRUE;
             }
-            else // try a regular surfing encounter
+            else
             {
-                if (TryGenerateWildMon(gWildMonHeaders[headerId].waterMonsInfo, WILD_AREA_WATER, WILD_CHECK_REPEL) == TRUE)
-                {
-                    StartWildBattle();
-                    return TRUE;
-                }
-                else
-                {
-                    AddToWildEncounterRateBuff(gWildMonHeaders[headerId].waterMonsInfo->encounterRate);
-                }
+                AddToWildEncounterRateBuff(gWildMonHeaders[headerId].waterMonsInfo->encounterRate);
             }
         }
     }
@@ -518,12 +481,6 @@ bool8 SweetScentWildEncounter(void)
     {
         if (MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_LAND)
         {
-            if (TryStartRoamerEncounter() == TRUE)
-            {
-                StartRoamerBattle();
-                return TRUE;
-            }
-
             if (gWildMonHeaders[headerId].landMonsInfo == NULL)
                 return FALSE;
 
@@ -534,12 +491,6 @@ bool8 SweetScentWildEncounter(void)
         }
         else if (MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_WATER)
         {
-            if (TryStartRoamerEncounter() == TRUE)
-            {
-                StartRoamerBattle();
-                return TRUE;
-            }
-
             if (gWildMonHeaders[headerId].waterMonsInfo == NULL)
                 return FALSE;
 

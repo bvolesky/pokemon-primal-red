@@ -279,7 +279,6 @@ SECTIONS {
         src/itemfinder.o(.text);
         src/buy_menu_helpers.o(.text);
         src/slot_machine.o(.text);
-        src/roamer.o(.text);
         src/mystery_gift_menu.o(.text);
         src/ereader_screen.o(.text);
         src/mystery_gift.o(.text);
@@ -573,7 +572,6 @@ SECTIONS {
         src/itemfinder.o(.rodata);
         src/buy_menu_helpers.o(.rodata);
         src/slot_machine.o(.rodata);
-        src/roamer.o(.rodata);
         src/mystery_gift_menu.o(.rodata);
         src/ereader_screen.o(.rodata);
         src/mystery_gift.o(.rodata);

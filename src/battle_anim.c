@@ -1020,10 +1020,7 @@ bool8 IsContest(void)
 // Unused
 static bool8 IsSpeciesNotUnown(u16 species)
 {
-    if (species == SPECIES_UNOWN)
-        return FALSE;
-    else
-        return TRUE;
+     return TRUE;
 }
 
 #define tBackgroundId   data[0]

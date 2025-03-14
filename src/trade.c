@@ -1555,17 +1555,6 @@ static bool8 BufferTradeParties(void)
         {
             u8 name[POKEMON_NAME_LENGTH + 1];
             u16 species = GetMonData(mon, MON_DATA_SPECIES);
-
-            if (species != SPECIES_NONE)
-            {
-                if (species == SPECIES_SHEDINJA && GetMonData(mon, MON_DATA_LANGUAGE) != LANGUAGE_JAPANESE)
-                {
-                    GetMonData(mon, MON_DATA_NICKNAME, name);
-
-                    if (!StringCompareWithoutExtCtrlCodes(name, sText_ShedinjaJP))
-                        SetMonData(mon, MON_DATA_NICKNAME, gSpeciesNames[SPECIES_SHEDINJA]);
-                }
-            }
         }
         return TRUE;
     // Delay until next state
@@ -1963,7 +1952,7 @@ static u8 CheckValidityOfTradeMons(u8 *aliveMons, u8 playerPartyCount, u8 cursor
 
     // Partner cant trade illegitimate Deoxys or Mew
     partnerSpecies = GetMonData(&gEnemyParty[sTradeMenu->partnerCursorPosition % PARTY_SIZE], MON_DATA_SPECIES);
-    if ((partnerSpecies == SPECIES_DEOXYS || partnerSpecies == SPECIES_MEW)
+    if ((partnerSpecies == SPECIES_MEW)
         && !GetMonData(&gEnemyParty[sTradeMenu->partnerCursorPosition % PARTY_SIZE], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
         return PARTNER_MON_INVALID;
 
@@ -2788,7 +2777,7 @@ static u32 CanTradeSelectedMon(struct Pokemon * playerParty, int partyCount, int
         }
     }
 
-    if (species[monIdx] == SPECIES_DEOXYS || species[monIdx] == SPECIES_MEW)
+    if (species[monIdx] == SPECIES_MEW)
     {
         if (!GetMonData(&playerParty[monIdx], MON_DATA_MODERN_FATEFUL_ENCOUNTER))
             return CANT_TRADE_INVALID_MON;
@@ -2857,7 +2846,7 @@ s32 GetGameProgressForLinkTrade(void)
 
 static bool32 IsDeoxysOrMewUntradable(u16 species, bool8 isModernFatefulEncounter)
 {
-    if (species == SPECIES_DEOXYS || species == SPECIES_MEW)
+    if (species == SPECIES_MEW)
     {
         if (!isModernFatefulEncounter)
             return TRUE;

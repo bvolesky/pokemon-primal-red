@@ -16,7 +16,6 @@
 #include "battle_records.h"
 #include "pokemon_size_record.h"
 #include "pokemon_storage_system.h"
-#include "roamer.h"
 #include "item.h"
 #include "player_pc.h"
 #include "berry.h"
@@ -134,7 +133,6 @@ void NewGameInitData(void)
     gPlayerPartyCount = 0;
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
-    ClearRoamerData();
     gSaveBlock1Ptr->registeredItem = 0;
     ClearBag();
     NewGameInitPCItems();

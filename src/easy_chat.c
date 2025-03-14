@@ -80,7 +80,6 @@ static const u16 sDefaultBattleStartWords[] = {
 };
 
 static const u16 sDeoxysValue[] = {
-    SPECIES_DEOXYS,
 };
 
 static bool8 IsECGroupUnlocked(u8 groupId)

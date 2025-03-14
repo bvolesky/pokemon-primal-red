@@ -26,7 +26,6 @@
 #include "pokedex.h"
 #include "quest_log.h"
 #include "random.h"
-#include "roamer.h"
 #include "safari_zone.h"
 #include "scanline_effect.h"
 #include "task.h"
@@ -1864,14 +1863,6 @@ static void TryCorrectShedinjaLanguage(struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
     u8 language = LANGUAGE_JAPANESE;
-
-    if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA
-     && GetMonData(mon, MON_DATA_LANGUAGE) != language)
-    {
-        GetMonData(mon, MON_DATA_NICKNAME, nickname);
-        if (StringCompareWithoutExtCtrlCodes(nickname, sText_ShedinjaJpnName) == 0)
-            SetMonData(mon, MON_DATA_LANGUAGE, &language);
-    }
 }
 
 #define sBattler            data[0]
@@ -1957,24 +1948,7 @@ void SpriteCB_FaintOpponentMon(struct Sprite *sprite)
 
     GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_PERSONALITY);  // Unused return value.
 
-    if (species == SPECIES_UNOWN)
-    {
-        u32 personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battler]], MON_DATA_PERSONALITY);
-        u16 unownForm = GET_UNOWN_LETTER(personalityValue);
-        u16 unownSpecies;
-
-        if (unownForm == 0)
-            unownSpecies = SPECIES_UNOWN;  // Use the A Unown form.
-        else
-            unownSpecies = NUM_SPECIES + unownForm;  // Use one of the other Unown letters.
-
-        yOffset = gMonFrontPicCoords[unownSpecies].y_offset;
-    }
-    else if (species == SPECIES_CASTFORM)
-    {
-        yOffset = gCastformFrontSpriteCoords[gBattleMonForms[battler]].y_offset;
-    }
-    else if (species > NUM_SPECIES)
+    if (species > NUM_SPECIES)
     {
         yOffset = gMonFrontPicCoords[SPECIES_NONE].y_offset;
     }
@@ -3920,16 +3894,6 @@ static void ReturnFromBattleToOverworld(void)
         gSpecialVar_Result = gBattleOutcome;
         gMain.inBattle = FALSE;
         gMain.callback1 = gPreBattleCallback1;
-        if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
-        {
-            UpdateRoamerHPStatus(&gEnemyParty[0]);
-#ifdef BUGFIX
-            if ((gBattleOutcome == B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT)
-#else
-            if ((gBattleOutcome & B_OUTCOME_WON) || gBattleOutcome == B_OUTCOME_CAUGHT) // Bug: When Roar is used by roamer, gBattleOutcome is B_OUTCOME_PLAYER_TELEPORTED (5).
-#endif                                                                                  // & with B_OUTCOME_WON (1) will return TRUE and deactivates the roamer.
-                SetRoamerInactive();
-        }
         m4aSongNumStop(SE_LOW_HEALTH);
         SetMainCallback2(gMain.savedCallback);
     }

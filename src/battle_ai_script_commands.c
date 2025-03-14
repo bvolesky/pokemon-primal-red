@@ -334,11 +334,6 @@ void BattleAI_SetupAIData(void)
         AI_THINKING_STRUCT->aiFlags = AI_SCRIPT_SAFARI;
         return;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
-    {
-        AI_THINKING_STRUCT->aiFlags = AI_SCRIPT_ROAMING;
-        return;
-    }
     else if (!(gBattleTypeFlags & (BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_BATTLE_TOWER)) && (gTrainerBattleOpponent_A != TRAINER_SECRET_BASE))
     {
         if (gBattleTypeFlags & BATTLE_TYPE_WILD_SCRIPTED)
