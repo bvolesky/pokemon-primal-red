@@ -3722,7 +3722,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_RivalOaksLabSquirtle[] = 
         .iv = 0,
         .lvl = 5,
         .species = SPECIES_SQUIRTLE,
-        .moves = {MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_WATER_GUN, MOVE_NONE},
+        .moves = {MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_BUBBLE, MOVE_NONE},
     },
 };
 
@@ -3731,7 +3731,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_RivalOaksLabBulbasaur[] =
         .iv = 0,
         .lvl = 5,
         .species = SPECIES_BULBASAUR,
-        .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_VINE_WHIP, MOVE_NONE},
+        .moves = {MOVE_TACKLE, MOVE_GROWL, MOVE_LEECH_SEED, MOVE_NONE},
     },
 };
 
@@ -3740,7 +3740,7 @@ static const struct TrainerMonNoItemCustomMoves sParty_RivalOaksLabCharmander[] 
         .iv = 0,
         .lvl = 5,
         .species = SPECIES_CHARMANDER,
-        .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_EMBER, MOVE_NONE},
+        .moves = {MOVE_SCRATCH, MOVE_GROWL, MOVE_LEER, MOVE_NONE},
     },
 };
 
