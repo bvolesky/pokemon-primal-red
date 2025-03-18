@@ -1231,7 +1231,6 @@ static void Cmd_get_highest_type_effectiveness(void)
 
     sAIScriptPtr += 1;
 }
-
 static void Cmd_if_type_effectiveness(void)
 {
     u8 damageVar;
