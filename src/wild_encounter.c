@@ -309,7 +309,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *info, u8 area, u8 
     }
 
     // Reduce encounter chance if Pokémon is already caught
-    if (HasPlayerCaught(species) && (Random() % 100) < 70)
+    if (HasPlayerCaught(species) && (Random() % 100) < 80)
     {
         return FALSE;
     }
