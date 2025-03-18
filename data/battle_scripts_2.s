@@ -76,7 +76,7 @@ BattleScript_SuccessBallThrow::
 BattleScript_SafariNoIncGameStat::
 	printstring STRINGID_GOTCHAPKMNCAUGHT
 	setbyte sGIVEEXP_STATE, 0
-    getexp BS_TARGET
+    getcaptureexp BS_TARGET
 	trysetcaughtmondexflags BattleScript_CaughtPokemonSkipNewDex
 	printstring STRINGID_PKMNDATAADDEDTODEX
 	waitstate

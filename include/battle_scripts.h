@@ -18,6 +18,7 @@ extern const u8 BattleScript_MoveUsedMustRecharge[];
 extern const u8 BattleScript_FaintAttacker[];
 extern const u8 BattleScript_FaintTarget[];
 extern const u8 BattleScript_GiveExp[];
+extern const u8 BattleScript_GiveCaptureExp[];
 extern const u8 BattleScript_HandleFaintedMon[];
 extern const u8 BattleScript_LocalTrainerBattleWon[];
 extern const u8 BattleScript_LocalTwoTrainersDefeated[];

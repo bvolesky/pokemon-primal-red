@@ -2821,6 +2821,11 @@ BattleScript_GiveExp::
 	getexp BS_TARGET
 	end2
 
+BattleScript_GiveCaptureExp::
+	setbyte sGIVEEXP_STATE, 0
+	getcaptureexp BS_TARGET
+	end2
+
 BattleScript_HandleFaintedMon::
 	checkteamslost BattleScript_LinkHandleFaintedMonMultiple
 	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_FaintedMonEnd

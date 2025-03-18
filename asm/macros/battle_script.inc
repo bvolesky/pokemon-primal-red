@@ -1249,6 +1249,11 @@
 	.byte 0xf7
 	.endm
 
+	.macro getcaptureexp battler:req
+	.byte 0xFf8
+	.byte \battler
+	.endm
+
 @ various command changed to more readable macros
 	.macro cancelmultiturnmoves battler:req
 	various \battler, VARIOUS_CANCEL_MULTI_TURN_MOVES
