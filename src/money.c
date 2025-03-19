@@ -4,6 +4,7 @@
 #include "menu.h"
 #include "text_window.h"
 #include "strings.h"
+#include "overworld.h"
 
 #define MAX_MONEY 999999
 
@@ -59,6 +60,14 @@ void RemoveMoney(u32 *moneyPtr, u32 toSub)
 
     SetMoney(moneyPtr, toSet);
 }
+
+u32 ConvertMoneyLossToString(void)
+{
+    u32 loss = ComputeWhiteOutMoneyLoss(); // or use a fixed 500 for testing
+    ConvertIntToDecimalStringN(gStringVar1, loss, STR_CONV_MODE_LEFT_ALIGN, 6);
+    return 0; // return value is unused
+}
+
 
 bool8 IsEnoughForCostInVar0x8005(void)
 {

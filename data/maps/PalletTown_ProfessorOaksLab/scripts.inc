@@ -424,9 +424,10 @@ PalletTown_ProfessorOaksLab_Movement_RivalApproachForBattleBulbasaurRight::
 	step_end
 
 PalletTown_ProfessorOaksLab_EventScript_EndRivalBattle::
-	special HealPlayerParty
-	msgbox PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon
-	closemessage
+    special HealPlayerParty
+    callnative ConvertMoneyLossToString
+    msgbox PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon
+    closemessage
 	playbgm MUS_RIVAL_EXIT, 0
 	call_if_eq VAR_TEMP_2, 1, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleLeft
 	call_if_eq VAR_TEMP_2, 2, PalletTown_ProfessorOaksLab_EventScript_RivalExitAfterBattleMid
