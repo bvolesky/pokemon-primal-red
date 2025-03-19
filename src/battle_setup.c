@@ -32,6 +32,7 @@
 #include "constants/songs.h"
 #include "constants/pokemon.h"
 #include "constants/trainers.h"
+#include "money.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -890,15 +891,8 @@ static void CB2_EndTrainerBattle(void)
         if (IsPlayerDefeated(gBattleOutcome) == TRUE)
         {
             gSpecialVar_Result = TRUE;
-            if (sRivalBattleFlags & RIVAL_BATTLE_HEAL_AFTER)
-            {
-                HealPlayerParty();
-            }
-            else
-            {
-                SetMainCallback2(CB2_WhiteOut);
-                return;
-            }
+            HealPlayerParty();
+            RemoveMoney(&gSaveBlock1Ptr->money, ComputeWhiteOutMoneyLoss());
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
             SetBattledTrainerFlag();
             QuestLogEvents_HandleEndTrainerBattle();
