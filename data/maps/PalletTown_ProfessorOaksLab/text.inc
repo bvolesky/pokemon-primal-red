@@ -42,8 +42,6 @@ Text_RivalVictory::
     .string "Am I great or what?$"
 
 PalletTown_ProfessorOaksLab_Text_RivalGoToughenMyMon::
-    .string "{PLAYER} was defeated by {RIVAL}...\p"
-    .string "{RIVAL}: I'll take that ¥{STR_VAR_1} from you\nnow, pipsqueak!\p"
     .string "{RIVAL}: Okay! I'll make my\n"
     .string "POKéMON battle to toughen it up!\p"
     .string "{PLAYER}! Gramps!\n"
