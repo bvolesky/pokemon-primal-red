@@ -5717,24 +5717,37 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderMisty[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderLtSurge[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 21,
         .species = SPECIES_VOLTORB,
-        .moves = {MOVE_SONIC_BOOM, MOVE_TACKLE, MOVE_SCREECH, MOVE_SHOCK_WAVE},
+        .moves = {MOVE_SHOCK_WAVE, MOVE_SCREECH, MOVE_SONIC_BOOM, MOVE_SELF_DESTRUCT},
     },
     {
-        .iv = 0,
-        .lvl = 18,
-        .species = SPECIES_PIKACHU,
-        .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_DOUBLE_TEAM, MOVE_SHOCK_WAVE},
+        .iv = 31,
+        .lvl = 22,
+        .species = SPECIES_MAGNEMITE,
+        .moves = {MOVE_THUNDER_WAVE, MOVE_SUPERSONIC, MOVE_SHOCK_WAVE, MOVE_METAL_SOUND},
     },
     {
-        .iv = 0,
+        .iv = 31,
+        .lvl = 22,
+        .species = SPECIES_ELECTABUZZ,
+        .moves = {MOVE_THUNDER_PUNCH, MOVE_SWIFT, MOVE_LIGHT_SCREEN, MOVE_LOW_KICK},
+    },
+    {
+        .iv = 31,
+        .lvl = 23,
+        .species = SPECIES_ELECTRODE,
+        .moves = {MOVE_SPARK, MOVE_SCREECH, MOVE_THUNDER_WAVE, MOVE_SWIFT},
+    },
+    {
+        .iv = 31,
         .lvl = 24,
         .species = SPECIES_RAICHU,
-        .moves = {MOVE_QUICK_ATTACK, MOVE_THUNDER_WAVE, MOVE_DOUBLE_TEAM, MOVE_SHOCK_WAVE},
+        .moves = {MOVE_THUNDERBOLT, MOVE_DOUBLE_TEAM, MOVE_QUICK_ATTACK, MOVE_BRICK_BREAK},
     },
 };
+
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderErika[] = {
     {
@@ -5864,13 +5877,27 @@ static const struct TrainerMonNoItemDefaultMoves sParty_GentlemanArthur[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_GentlemanTucker[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_GentlemanTucker[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 23,
+        .species = SPECIES_MAGNEMITE,
+        .moves = {MOVE_THUNDER_SHOCK, MOVE_SUPERSONIC, MOVE_SONIC_BOOM, MOVE_THUNDER_WAVE},
+    },
+    {
+        .iv = 31,
+        .lvl = 23,
+        .species = SPECIES_VOLTORB,
+        .moves = {MOVE_SPARK, MOVE_SCREECH, MOVE_SELF_DESTRUCT, MOVE_CHARGE},
+    },
+    {
+        .iv = 31,
+        .lvl = 24,
         .species = SPECIES_PIKACHU,
+        .moves = {MOVE_THUNDERBOLT, MOVE_DOUBLE_TEAM, MOVE_QUICK_ATTACK, MOVE_GROWL},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_GentlemanNorton[] = {
     {
