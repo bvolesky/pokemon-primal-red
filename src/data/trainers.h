@@ -1499,8 +1499,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("DIANA"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_PicnickerDiana),
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_PicnickerDiana),
     },
     [TRAINER_PICNICKER_NANCY] = {
         .trainerClass = TRAINER_CLASS_PICNICKER,
@@ -2339,8 +2339,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("LUIS"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_SwimmerMaleLuis),
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE,
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_SwimmerMaleLuis),
     },
     [TRAINER_SWIMMER_MALE_RICHARD] = {
         .trainerClass = TRAINER_CLASS_SWIMMER_M,
@@ -4147,9 +4147,9 @@ const struct Trainer gTrainers[] = {
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE | F_TRAINER_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_MISTY,
         .trainerName = _("MISTY"),
-        .items = {ITEM_SUPER_POTION},
+        .items = {ITEM_SUPER_POTION, ITEM_SUPER_POTION},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_RISKY,
         .party = NO_ITEM_CUSTOM_MOVES(sParty_LeaderMisty),
     },
     [TRAINER_LEADER_LT_SURGE] = {

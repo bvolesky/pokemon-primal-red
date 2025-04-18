@@ -983,13 +983,27 @@ static const struct TrainerMonNoItemDefaultMoves sParty_CamperDrew[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_PicnickerDiana[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_PicnickerDiana[] = {
     {
-        .iv = 0,
+        .iv = 20,
+        .lvl = 18,
+        .species = SPECIES_ODDISH,
+        .moves = {MOVE_ABSORB, MOVE_ACID, MOVE_POISON_POWDER, MOVE_SWEET_SCENT},
+    },
+    {
+        .iv = 20,
+        .lvl = 18,
+        .species = SPECIES_MEOWTH,
+        .moves = {MOVE_BITE, MOVE_FAKE_OUT, MOVE_PAY_DAY, MOVE_GROWL},
+    },
+    {
+        .iv = 20,
         .lvl = 19,
         .species = SPECIES_GOLDEEN,
+        .moves = {MOVE_WATER_PULSE, MOVE_PECK, MOVE_SUPERSONIC, MOVE_TAIL_WHIP},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_PicnickerNancy[] = {
     {
@@ -2310,18 +2324,27 @@ static const struct TrainerMonNoItemDefaultMoves sParty_FishermanAndrew[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_SwimmerMaleLuis[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_SwimmerMaleLuis[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 16,
         .species = SPECIES_HORSEA,
+        .moves = {MOVE_WATER_GUN, MOVE_SMOKESCREEN, MOVE_LEER, MOVE_BUBBLE},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 16,
         .species = SPECIES_SHELLDER,
+        .moves = {MOVE_ICY_WIND, MOVE_CLAMP, MOVE_PROTECT, MOVE_SUPERSONIC},
+    },
+    {
+        .iv = 20,
+        .lvl = 17,
+        .species = SPECIES_TENTACOOL,
+        .moves = {MOVE_POISON_STING, MOVE_SUPERSONIC, MOVE_ACID, MOVE_WATER_PULSE},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_SwimmerMaleRichard[] = {
     {
@@ -5672,18 +5695,25 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderBrock[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderMisty[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 18,
-        .species = SPECIES_STARYU,
-        .moves = {MOVE_TACKLE, MOVE_HARDEN, MOVE_RECOVER, MOVE_WATER_PULSE},
+        .species = SPECIES_PSYDUCK,
+        .moves = {MOVE_WATER_GUN, MOVE_CONFUSION, MOVE_DISABLE, MOVE_SCREECH},
     },
     {
-        .iv = 0,
+        .iv = 31,
+        .lvl = 19,
+        .species = SPECIES_SHELLDER,
+        .moves = {MOVE_ICY_WIND, MOVE_CLAMP, MOVE_PROTECT, MOVE_SUPERSONIC},
+    },
+    {
+        .iv = 31,
         .lvl = 21,
         .species = SPECIES_STARMIE,
-        .moves = {MOVE_SWIFT, MOVE_RECOVER, MOVE_RAPID_SPIN, MOVE_WATER_PULSE},
+        .moves = {MOVE_WATER_PULSE, MOVE_PSYWAVE, MOVE_RECOVER, MOVE_SWIFT},
     },
 };
+
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderLtSurge[] = {
     {
