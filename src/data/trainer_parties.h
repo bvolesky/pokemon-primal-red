@@ -4232,34 +4232,34 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BossGiovanni2[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderGiovanni[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 45,
-        .species = SPECIES_RHYHORN,
-        .moves = {MOVE_TAKE_DOWN, MOVE_ROCK_BLAST, MOVE_SCARY_FACE, MOVE_EARTHQUAKE},
+        .species = SPECIES_PERSIAN,
+        .moves = {MOVE_SLASH, MOVE_FAKE_OUT, MOVE_TAUNT, MOVE_ROAR},
     },
     {
-        .iv = 0,
-        .lvl = 42,
-        .species = SPECIES_DUGTRIO,
-        .moves = {MOVE_SLASH, MOVE_SAND_TOMB, MOVE_MUD_SLAP, MOVE_EARTHQUAKE},
-    },
-    {
-        .iv = 0,
-        .lvl = 44,
-        .species = SPECIES_NIDOQUEEN,
-        .moves = {MOVE_BODY_SLAM, MOVE_DOUBLE_KICK, MOVE_POISON_STING, MOVE_EARTHQUAKE},
-    },
-    {
-        .iv = 0,
-        .lvl = 45,
+        .iv = 31,
+        .lvl = 46,
         .species = SPECIES_NIDOKING,
-        .moves = {MOVE_THRASH, MOVE_DOUBLE_KICK, MOVE_POISON_STING, MOVE_EARTHQUAKE},
+        .moves = {MOVE_EARTHQUAKE, MOVE_FLAMETHROWER, MOVE_ICE_BEAM, MOVE_THUNDERBOLT}, // Coverage king
     },
     {
-        .iv = 0,
+        .iv = 31,
+        .lvl = 46,
+        .species = SPECIES_PORYGON,
+        .moves = {MOVE_THUNDERBOLT, MOVE_PSYCHIC, MOVE_RECOVER, MOVE_ICE_BEAM},
+    },
+    {
+        .iv = 31,
+        .lvl = 47,
+        .species = SPECIES_EXEGGUTOR,
+        .moves = {MOVE_PSYCHIC, MOVE_GIGA_DRAIN, MOVE_STUN_SPORE, MOVE_SLEEP_POWDER},
+    },
+    {
+        .iv = 31,
         .lvl = 50,
-        .species = SPECIES_RHYHORN,
-        .moves = {MOVE_TAKE_DOWN, MOVE_ROCK_BLAST, MOVE_SCARY_FACE, MOVE_EARTHQUAKE},
+        .species = SPECIES_RHYDON,
+        .moves = {MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_MEGAHORN, MOVE_SCARY_FACE},
     },
 };
 
