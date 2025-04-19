@@ -3631,18 +3631,34 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BirdKeeperMarlon[] = {
     },
 };
 
-static const struct TrainerMonItemDefaultMoves sParty_BlackBeltKoichi[] = {
+static const struct TrainerMonItemCustomMoves sParty_BlackBeltKoichi[] = {
     {
         .iv = 100,
-        .lvl = 37,
-        .species = SPECIES_HITMONLEE,
+        .lvl = 36,
+        .species = SPECIES_HITMONCHAN,
         .heldItem = ITEM_BLACK_BELT,
+        .moves = {MOVE_COUNTER, MOVE_THUNDER_PUNCH, MOVE_ICE_PUNCH, MOVE_FIRE_PUNCH},
     },
     {
         .iv = 100,
-        .lvl = 37,
-        .species = SPECIES_HITMONCHAN,
+        .lvl = 36,
+        .species = SPECIES_HITMONLEE,
         .heldItem = ITEM_BLACK_BELT,
+        .moves = {MOVE_HI_JUMP_KICK, MOVE_FOCUS_ENERGY, MOVE_MEDITATE, MOVE_MIND_READER},
+    },
+    {
+        .iv = 100,
+        .lvl = 35,
+        .species = SPECIES_PRIMEAPE,
+        .heldItem = ITEM_BLACK_BELT,
+        .moves = {MOVE_CROSS_CHOP, MOVE_SCREECH, MOVE_SEISMIC_TOSS, MOVE_SWAGGER},
+    },
+    {
+        .iv = 100,
+        .lvl = 35,
+        .species = SPECIES_MACHOKE,
+        .heldItem = ITEM_BLACK_BELT,
+        .moves = {MOVE_KARATE_CHOP, MOVE_VITAL_THROW, MOVE_ROCK_TOMB, MOVE_FORESIGHT},
     },
 };
 
@@ -3711,6 +3727,7 @@ static const struct TrainerMonItemDefaultMoves sParty_BlackBeltHitoshi[] = {
         .heldItem = ITEM_BLACK_BELT,
     },
 };
+
 
 static const struct TrainerMonItemDefaultMoves sParty_BlackBeltAtsushi[] = {
     {
