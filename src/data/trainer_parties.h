@@ -5843,28 +5843,34 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderKoga[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderBlaine[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 42,
-        .species = SPECIES_GROWLITHE,
-        .moves = {MOVE_BITE, MOVE_ROAR, MOVE_TAKE_DOWN, MOVE_FIRE_BLAST},
+        .species = SPECIES_MAGMAR,
+        .moves = {MOVE_FLAMETHROWER, MOVE_CONFUSE_RAY, MOVE_PSYCHIC, MOVE_SMOKESCREEN}, // Lab hazard
     },
     {
-        .iv = 0,
-        .lvl = 40,
-        .species = SPECIES_PONYTA,
-        .moves = {MOVE_STOMP, MOVE_BOUNCE, MOVE_FIRE_SPIN, MOVE_FIRE_BLAST},
+        .iv = 31,
+        .lvl = 42,
+        .species = SPECIES_ELECTABUZZ,
+        .moves = {MOVE_THUNDERBOLT, MOVE_BRICK_BREAK, MOVE_LIGHT_SCREEN, MOVE_SWIFT}, // Anti-Water, setup disrupter
     },
     {
-        .iv = 0,
-        .lvl = 42,
+        .iv = 31,
+        .lvl = 43,
+        .species = SPECIES_JYNX,
+        .moves = {MOVE_PSYCHIC, MOVE_ICE_PUNCH, MOVE_LOVELY_KISS, MOVE_FAKE_TEARS}, // Anti-Ground/Dragon/Poison, status support
+    },
+    {
+        .iv = 31,
+        .lvl = 43,
         .species = SPECIES_RAPIDASH,
-        .moves = {MOVE_STOMP, MOVE_BOUNCE, MOVE_FIRE_SPIN, MOVE_FIRE_BLAST},
+        .moves = {MOVE_FIRE_BLAST, MOVE_BOUNCE, MOVE_IRON_TAIL, MOVE_AGILITY}, // Physical sweeper, Flying-type coverage
     },
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 47,
         .species = SPECIES_ARCANINE,
-        .moves = {MOVE_BITE, MOVE_ROAR, MOVE_TAKE_DOWN, MOVE_FIRE_BLAST},
+        .moves = {MOVE_FIRE_BLAST, MOVE_EXTREME_SPEED, MOVE_CRUNCH, MOVE_ROAR}, // Boss anchor
     },
 };
 
