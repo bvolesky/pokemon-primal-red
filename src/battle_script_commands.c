@@ -5529,7 +5529,7 @@ static void Cmd_getmoneyreward(void)
     u32 moneyReward;
     u8 lastMonLevel = 0;
 
-    const struct TrainerMonItemCustomMoves *party4; //This needs to be out here
+    const struct TrainerMonItemCustomMoves *party4;
 
     if (gBattleOutcome == B_OUTCOME_WON)
     {
@@ -5544,28 +5544,24 @@ static void Cmd_getmoneyreward(void)
             case 0:
                 {
                     const struct TrainerMonNoItemDefaultMoves *party1 = gTrainers[gTrainerBattleOpponent_A].party.NoItemDefaultMoves;
-                    
                     lastMonLevel = party1[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case F_TRAINER_PARTY_CUSTOM_MOVESET:
                 {
                     const struct TrainerMonNoItemCustomMoves *party2 = gTrainers[gTrainerBattleOpponent_A].party.NoItemCustomMoves;
-                    
                     lastMonLevel = party2[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case F_TRAINER_PARTY_HELD_ITEM:
                 {
                     const struct TrainerMonItemDefaultMoves *party3 = gTrainers[gTrainerBattleOpponent_A].party.ItemDefaultMoves;
-                    
                     lastMonLevel = party3[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
             case (F_TRAINER_PARTY_CUSTOM_MOVESET | F_TRAINER_PARTY_HELD_ITEM):
                 {
                     party4 = gTrainers[gTrainerBattleOpponent_A].party.ItemCustomMoves;
-                    
                     lastMonLevel = party4[gTrainers[gTrainerBattleOpponent_A].partySize - 1].lvl;
                 }
                 break;
@@ -5576,7 +5572,11 @@ static void Cmd_getmoneyreward(void)
                     break;
             }
             party4 = gTrainers[gTrainerBattleOpponent_A].party.ItemCustomMoves; // Needed to Match. Has no effect.
-            moneyReward = 4 * lastMonLevel * gBattleStruct->moneyMultiplier * (gBattleTypeFlags & BATTLE_TYPE_DOUBLE ? 2 : 1) * gTrainerMoneyTable[i].value;
+
+            // ⭐ TRIPLE THE MONEY REWARD HERE:
+            moneyReward = 3 * (4 * lastMonLevel * gBattleStruct->moneyMultiplier *
+                            (gBattleTypeFlags & BATTLE_TYPE_DOUBLE ? 2 : 1) *
+                            gTrainerMoneyTable[i].value);
         }
         AddMoney(&gSaveBlock1Ptr->money, moneyReward);
     }
@@ -5584,12 +5584,14 @@ static void Cmd_getmoneyreward(void)
     {
         moneyReward = ComputeWhiteOutMoneyLoss();
     }
+
     PREPARE_WORD_NUMBER_BUFFER(gBattleTextBuff1, 5, moneyReward);
     if (moneyReward)
         gBattlescriptCurrInstr += 5;
     else
         gBattlescriptCurrInstr = T1_READ_PTR(gBattlescriptCurrInstr + 1);
 }
+
 
 // Command is never used
 static void Cmd_updatebattlermoves(void)
