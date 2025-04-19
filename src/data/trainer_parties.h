@@ -763,18 +763,21 @@ static const struct TrainerMonNoItemDefaultMoves sParty_LassKay[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_LassLisa[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_LassLisa[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 23,
         .species = SPECIES_ODDISH,
+        .moves = {MOVE_POISON_POWDER, MOVE_ABSORB, MOVE_ACID, MOVE_SLEEP_POWDER},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 23,
         .species = SPECIES_GLOOM,
+        .moves = {MOVE_STUN_SPORE, MOVE_ACID, MOVE_MEGA_DRAIN, MOVE_SWEET_SCENT},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_SailorEdmond[] = {
     {
@@ -2821,13 +2824,15 @@ static const struct TrainerMonNoItemDefaultMoves sParty_BeautyTamia[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BeautyLori[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_BeautyLori[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 24,
         .species = SPECIES_EXEGGCUTE,
+        .moves = {MOVE_SLEEP_POWDER, MOVE_CONFUSION, MOVE_REFLECT, MOVE_LEECH_SEED},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_BeautyLola[] = {
     {
@@ -5751,24 +5756,38 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderLtSurge[] = {
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderErika[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 29,
         .species = SPECIES_VICTREEBEL,
-        .moves = {MOVE_STUN_SPORE, MOVE_ACID, MOVE_POISON_POWDER, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_SWORDS_DANCE, MOVE_ACID, MOVE_SLEEP_POWDER, MOVE_GIGA_DRAIN},
     },
     {
-        .iv = 0,
-        .lvl = 24,
+        .iv = 31,
+        .lvl = 26,
         .species = SPECIES_TANGELA,
-        .moves = {MOVE_POISON_POWDER, MOVE_CONSTRICT, MOVE_INGRAIN, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_BIND, MOVE_INGRAIN, MOVE_LEECH_SEED, MOVE_GIGA_DRAIN},
     },
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 29,
         .species = SPECIES_VILEPLUME,
-        .moves = {MOVE_SLEEP_POWDER, MOVE_ACID, MOVE_STUN_SPORE, MOVE_GIGA_DRAIN},
+        .moves = {MOVE_STUN_SPORE, MOVE_MOONLIGHT, MOVE_ACID, MOVE_GIGA_DRAIN},
+    },
+    {
+        .iv = 31,
+        .lvl = 30,
+        .species = SPECIES_PARASECT,
+        .moves = {MOVE_SPORE, MOVE_SLASH, MOVE_LEECH_LIFE, MOVE_STUN_SPORE},
+    },
+    {
+        .iv = 31,
+        .lvl = 31,
+        .species = SPECIES_EXEGGCUTE,
+        .moves = {MOVE_PSYCHIC, MOVE_SLEEP_POWDER, MOVE_REFLECT, MOVE_LEECH_SEED},
     },
 };
+
+
 
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderKoga[] = {
     {

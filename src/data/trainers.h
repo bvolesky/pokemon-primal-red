@@ -1329,8 +1329,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("LISA"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_LassLisa),
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_LassLisa),
     },
     [TRAINER_SAILOR_EDMOND] = {
         .trainerClass = TRAINER_CLASS_SAILOR,
@@ -2669,8 +2669,8 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("LORI"),
         .items = {},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE,
-        .party = NO_ITEM_DEFAULT_MOVES(sParty_BeautyLori),
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .party = NO_ITEM_CUSTOM_MOVES(sParty_BeautyLori),
     },
     [TRAINER_BEAUTY_LOLA] = {
         .trainerClass = TRAINER_CLASS_BEAUTY,
@@ -4169,7 +4169,7 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("ERIKA"),
         .items = {ITEM_HYPER_POTION, ITEM_FULL_HEAL},
         .doubleBattle = FALSE,
-        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_PREFER_STRONGEST_MOVE | AI_SCRIPT_RISKY,
         .party = NO_ITEM_CUSTOM_MOVES(sParty_LeaderErika),
     },
     [TRAINER_LEADER_KOGA] = {
