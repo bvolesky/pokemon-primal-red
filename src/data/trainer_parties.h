@@ -3154,39 +3154,45 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JugglerNelson[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_JugglerKirk[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JugglerKirk[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 31,
         .species = SPECIES_DROWZEE,
+        .moves = {MOVE_HYPNOSIS, MOVE_DISABLE, MOVE_CONFUSION, MOVE_HEADBUTT},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 31,
         .species = SPECIES_DROWZEE,
+        .moves = {MOVE_HYPNOSIS, MOVE_BARRIER, MOVE_CONFUSION, MOVE_DISABLE},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 31,
         .species = SPECIES_KADABRA,
+        .moves = {MOVE_PSYBEAM, MOVE_RECOVER, MOVE_KINESIS, MOVE_DISABLE},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 31,
         .species = SPECIES_DROWZEE,
+        .moves = {MOVE_HEADBUTT, MOVE_DISABLE, MOVE_CONFUSION, MOVE_HYPNOSIS},
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_JugglerShawn[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JugglerShawn[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 34,
         .species = SPECIES_DROWZEE,
+        .moves = {MOVE_HYPNOSIS, MOVE_CONFUSION, MOVE_DISABLE, MOVE_MEDITATE},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 34,
         .species = SPECIES_HYPNO,
+        .moves = {MOVE_PSYCHIC, MOVE_HEADBUTT, MOVE_DISABLE, MOVE_HYPNOSIS},
     },
 };
 
@@ -3234,18 +3240,21 @@ static const struct TrainerMonNoItemDefaultMoves sParty_JugglerKayden[] = {
     },
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_JugglerNate[] = {
+static const struct TrainerMonNoItemCustomMoves sParty_JugglerNate[] = {
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 34,
         .species = SPECIES_DROWZEE,
+        .moves = {MOVE_CONFUSION, MOVE_DISABLE, MOVE_BARRIER, MOVE_HEADBUTT},
     },
     {
-        .iv = 0,
+        .iv = 20,
         .lvl = 34,
         .species = SPECIES_KADABRA,
+        .moves = {MOVE_PSYBEAM, MOVE_KINESIS, MOVE_DISABLE, MOVE_RECOVER},
     },
 };
+
 
 static const struct TrainerMonNoItemDefaultMoves sParty_TamerPhil[] = {
     {
@@ -5805,31 +5814,30 @@ static const struct TrainerMonNoItemCustomMoves sParty_LeaderErika[] = {
 };
 
 
-
 static const struct TrainerMonNoItemCustomMoves sParty_LeaderKoga[] = {
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 37,
         .species = SPECIES_KOFFING,
-        .moves = {MOVE_SELF_DESTRUCT, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_TOXIC},
+        .moves = {MOVE_SLUDGE, MOVE_TOXIC, MOVE_SMOKESCREEN, MOVE_SELF_DESTRUCT},
     },
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 39,
         .species = SPECIES_MUK,
-        .moves = {MOVE_MINIMIZE, MOVE_SLUDGE, MOVE_ACID_ARMOR, MOVE_TOXIC},
+        .moves = {MOVE_SLUDGE, MOVE_TOXIC, MOVE_MINIMIZE, MOVE_ACID_ARMOR},
     },
     {
-        .iv = 0,
-        .lvl = 37,
-        .species = SPECIES_KOFFING,
-        .moves = {MOVE_SELF_DESTRUCT, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_TOXIC},
+        .iv = 31,
+        .lvl = 38,
+        .species = SPECIES_VENOMOTH,
+        .moves = {MOVE_PSYBEAM, MOVE_STUN_SPORE, MOVE_LEECH_LIFE, MOVE_SLEEP_POWDER},
     },
     {
-        .iv = 0,
+        .iv = 31,
         .lvl = 43,
         .species = SPECIES_WEEZING,
-        .moves = {MOVE_TACKLE, MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_TOXIC},
+        .moves = {MOVE_SLUDGE, MOVE_SMOKESCREEN, MOVE_TAUNT, MOVE_TOXIC},
     },
 };
 
