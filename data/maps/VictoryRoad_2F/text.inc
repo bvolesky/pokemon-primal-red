@@ -72,7 +72,7 @@ VictoryRoad_2F_Text_LaithanPostBattle::
     .string "Young poop!$"
 
 VictoryRoad_2F_Text_DillonIntro::
-    .string "Im gonna cream you!\n"
+    .string "Im gonna cream you!$"
 
 VictoryRoad_2F_Text_DillonDefeat::
     .string "I creamed you!$"
