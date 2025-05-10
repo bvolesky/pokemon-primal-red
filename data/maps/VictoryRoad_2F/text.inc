@@ -63,27 +63,22 @@ VictoryRoad_2F_Text_TylerPostBattle::
     .string "I gotta drive 18 hours now!$"
 
 VictoryRoad_2F_Text_LaithanIntro::
-    .string "Come on!\n"
-    .string "I'll whip you!$"
+    .string "The new Sonic game dropped!$"
 
 VictoryRoad_2F_Text_LaithanDefeat::
-    .string "I got whipped!$"
+    .string "Yeaaa boy!$"
 
 VictoryRoad_2F_Text_LaithanPostBattle::
-    .string "You earned the right to be on\n"
-    .string "VICTORY ROAD…$"
-
+    .string "Young poop!$"
 
 VictoryRoad_2F_Text_DillonIntro::
-    .string "Come on!\n"
-    .string "I'll whip you!$"
+    .string "Im gonna cream you!\n"
 
 VictoryRoad_2F_Text_DillonDefeat::
-    .string "I got whipped!$"
+    .string "I creamed you!$"
 
 VictoryRoad_2F_Text_DillonPostBattle::
-    .string "You earned the right to be on\n"
-    .string "VICTORY ROAD…$"
+    .string "You creamed me!$ Yahtzeee!$"
 
 VictoryRoad_2F_Text_GregoryIntro::
     .string "Is VICTORY ROAD too tough?$"
