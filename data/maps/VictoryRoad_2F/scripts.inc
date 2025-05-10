@@ -80,21 +80,21 @@ VictoryRoad_2F_EventScript_Vincent::
 	end
 
 VictoryRoad_2F_EventScript_Colby::
-	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
-	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PRIMAL_COLBY, VictoryRoad_2F_Text_ColbyIntro, VictoryRoad_2F_Text_ColbyDefeat
+	msgbox VictoryRoad_2F_Text_ColbyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_2F_EventScript_Tyler::
-	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
-	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PRIMAL_TYLER, VictoryRoad_2F_Text_TylerIntro, VictoryRoad_2F_Text_TylerDefeat
+	msgbox VictoryRoad_2F_Text_TylerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_2F_EventScript_Laithan::
-	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
-	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PRIMAL_LAITHAN, VictoryRoad_2F_Text_LaithanIntro, VictoryRoad_2F_Text_LaithanDefeat
+	msgbox VictoryRoad_2F_Text_LaithanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 VictoryRoad_2F_EventScript_Dillon::
-	trainerbattle_single TRAINER_JUGGLER_NELSON, VictoryRoad_2F_Text_NelsonIntro, VictoryRoad_2F_Text_NelsonDefeat
-	msgbox VictoryRoad_2F_Text_NelsonPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_PRIMAL_DILLON, VictoryRoad_2F_Text_DillonIntro, VictoryRoad_2F_Text_DillonDefeat
+	msgbox VictoryRoad_2F_Text_DillonPostBattle, MSGBOX_AUTOCLOSE
 	end

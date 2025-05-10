@@ -42,6 +42,49 @@ VictoryRoad_2F_Text_VincentPostBattle::
     .string "You earned the right to be on\n"
     .string "VICTORY ROAD…$"
 
+VictoryRoad_2F_Text_ColbyIntro::
+    .string "Hey buddy!\n"
+    .string "I got pics with all the\n"
+    .string "kpop group members!$"
+
+VictoryRoad_2F_Text_ColbyDefeat::
+    .string "I have been EV training!$"
+
+VictoryRoad_2F_Text_ColbyPostBattle::
+    .string "Good job buddy!$"
+
+VictoryRoad_2F_Text_TylerIntro::
+    .string "I havent slept in 2 days!$"
+
+VictoryRoad_2F_Text_TylerDefeat::
+    .string "I did it!$"
+
+VictoryRoad_2F_Text_TylerPostBattle::
+    .string "I gotta drive 18 hours now!$"
+
+VictoryRoad_2F_Text_LaithanIntro::
+    .string "Come on!\n"
+    .string "I'll whip you!$"
+
+VictoryRoad_2F_Text_LaithanDefeat::
+    .string "I got whipped!$"
+
+VictoryRoad_2F_Text_LaithanPostBattle::
+    .string "You earned the right to be on\n"
+    .string "VICTORY ROAD…$"
+
+
+VictoryRoad_2F_Text_DillonIntro::
+    .string "Come on!\n"
+    .string "I'll whip you!$"
+
+VictoryRoad_2F_Text_DillonDefeat::
+    .string "I got whipped!$"
+
+VictoryRoad_2F_Text_DillonPostBattle::
+    .string "You earned the right to be on\n"
+    .string "VICTORY ROAD…$"
+
 VictoryRoad_2F_Text_GregoryIntro::
     .string "Is VICTORY ROAD too tough?$"
 
