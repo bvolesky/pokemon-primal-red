@@ -2874,7 +2874,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_PRIMAL_COLBY] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
-        .encounterMusic_gender = TRAINNER_TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_JUGGLER,
         .trainerName = _("COLBY"),
         .items = {},
@@ -2884,7 +2884,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_PRIMAL_TYLER] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
-        .encounterMusic_gender = TRAINNER_TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_JUGGLER,
         .trainerName = _("TYLER"),
         .items = {},
@@ -2894,7 +2894,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_PRIMAL_LAITHAN] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
-        .encounterMusic_gender = TRAINNER_TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_JUGGLER,
         .trainerName = _("LAITHAN"),
         .items = {},
@@ -2904,7 +2904,7 @@ const struct Trainer gTrainers[] = {
     },
     [TRAINER_PRIMAL_DILLON] = {
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
-        .encounterMusic_gender = TRAINNER_TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
         .trainerPic = TRAINER_PIC_JUGGLER,
         .trainerName = _("DILLON"),
         .items = {},
